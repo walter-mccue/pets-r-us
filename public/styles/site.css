@@ -1,0 +1,97 @@
+/**
+ * Title: site.css
+ * Author: Walter McCue
+ * Date: 09/04/2022
+ * Description: Styling for the pets-r-us directory
+ * Resources: WEB-340-Assign-4.docx; WEB-340-pets-r-us.docx; WEB-340 GitHub
+ */
+ body {
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+    font-size: 18px;
+    background-color: black;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 960px;
+    margin:auto
+ }
+ h1 {
+    position: absolute;
+    top: 20px;
+    margin: 10px;
+ }
+ h2 {
+    text-align: center;
+ }
+ #banner {
+    width: 100%;
+ }
+ nav {
+    text-align: center;
+    word-spacing: 30px;
+    margin-bottom: 10px;
+ }
+ a {
+    color: white;
+    text-decoration: none;
+
+ }
+a:hover {
+    color: yellow;
+    cursor: pointer;
+}
+ main {
+    background-color: #d3d3d3;
+ }
+ article {
+    min-height: 475px;
+    margin: auto;
+    vertical-align: middle;
+    font-size: 17px;
+ }
+ .content {
+    float: left;
+    width: 46%;
+    padding: 2%;
+    margin: auto;
+    text-align: center;
+ }
+ footer {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+ }
+ input {
+    padding: 12px;
+    margin: 4px;
+    font-size: 16px;
+    width: 50%;
+ }
+ button {
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 4px;
+    cursor: pointer;
+    padding: 15px 32px;
+ }
+ button:hover {
+    background-color: yellow;
+    cursor: pointer;
+ }
+ table {
+    margin-left: auto;
+    margin-right: auto;
+ }
+ .right {
+    float:right;
+ }
+ .block {
+    margin: 5px;
+ }
