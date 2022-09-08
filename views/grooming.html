@@ -17,26 +17,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     
-        <title>Dog Grooming</title>
+        <title><%- title %></title>
     </head>
     <body>
         <header>
-            <a id="top"></a>
-            <img src="images/header.jpg" id="banner" alt="Happy Dog" />
-            <h1>Pets-R-Us<br>Dog Grooming Services</h1>
-            <nav>
-                <a href="/">Home</a>
-                <a href="grooming">Grooming</a>
-                <a href="training">Training</a>
-                <a href="boarding">Boarding</a>
-                <a href="appointments">Book-Now</a>
-                <a href="registration">Register</a>
-                <a href="customers">Customers</a>
-                <a href="appointments">Appointments</a>
-            </nav>
+            <%- include('./partials/_header.html') %>
         </header>
         <main>
-            <hr>
+            <hr><br>
             <article>
                 <div class="content">
                     <h2>Bath Time</h2>
@@ -56,7 +44,7 @@
                     <img src="images/grooming-bath.jpg" alt="Happy puppy is getting scrubbed down during a bath." />
                 </div>
             </article>
-            <hr>
+            <br><hr><br>
             <article>
                 <div class="content">
                     <img src="images/grooming-haircut.jpg" alt="Mature dog holds still so the groomer can add the finishing touches to a cute haircut." />
@@ -79,7 +67,7 @@
                         </tr>
                     </table>
                 </div>
-            </article>
+            <br></article><br>
             <hr>
             <article>
                 <div class="content">
@@ -117,15 +105,10 @@
                     <img src="images/grooming-nails.jpg" alt="Dog stares patiently at the camera while his nails are getting trimmed." />
                 </div>
             </article>
-            <hr>
+            <br><hr>
         </main>
         <footer>
-            <a href="#top">Back to Top of Page</a>
-            <h2>Contact Us</h2>
-            <p>Enter your email address and join our mailing list. Your first email will be a confirmation as well as a response form if you wish to leave a testimonial or have any further questions or concerns.</p>
-            <form>
-                <input type="text" id="txtContact" placeholder="Email"><button type="submit" id="btnContact">Send</button>
-            </form>
+            <%- include('./partials/_footer.html'); %>
         </footer>
     </body>
 </html>

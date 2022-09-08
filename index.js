@@ -9,25 +9,40 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const ejs = require('ejs');
  
 app.engine('html', require('ejs').__express);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
+app.set('views', './views');
  
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-    res.render('index.html', {
-        title: 'Pets-R-Us Home'
+    res.render('index', {
+        title: 'Pets-R-Us Home',
     })
 });
 
-app.get('/grooming.html', (req, res) => {
-    res.render('grooming.html', {
-        title: 'Dog Grooming',
+app.get('/grooming', (req, res) => {
+    res.render('grooming', {
+        title: 'Pets-R-Us Dog Grooming',
+    })
+});
+
+app.get('/boarding', (req, res) => {
+    res.render('boarding', {
+        title: 'Pets-R-Us Dog Boarding',
+    })
+});
+
+app.get('/training', (req, res) => {
+    res.render('training', {
+        title: 'Pets-R-Us Dog Training',
     })
 });
 
