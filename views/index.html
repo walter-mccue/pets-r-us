@@ -20,13 +20,22 @@
         <title><%- title %></title>
     </head>
     <body>
+        <!--
+            Header area imported from _header.html
+        -->
         <header>
             <%- include('./partials/_header.html') %>
         </header>
         <main>
             <hr>
+            <!--
+                Introduction
+            -->
                 <p class="block">Welcome to Pets-R-Us. We've been rescuing dogs and helping them find forever homes for what seems like forever. Since we opened our doors we've been one of the largest pet stores to our local community. Because of this and the support of everyone, we've expanded our outreach and have opened another store. We've also recently expanded our operation to include new services like training, grooming, and boarding. This would not have been made possible without the love and support of everyone who visits us, the communities we serve, and our love and passion for our four-legged friends.</p>
             <hr><br>
+            <!--
+                Locations and Hours
+            -->
             <article>
                 <div class="content">
                     <h2>Locations</h2>
@@ -73,6 +82,9 @@
                 </div>
             </article>
             <br><hr><br>
+            <!--
+                Dog of the Week
+            -->
             <article>
                 <div class="content">
                     <h2>Dog of the Week</h2>
@@ -83,6 +95,9 @@
                 </div>
             </article>
             <br><hr><br>
+            <!--
+                Testimonials
+            -->
             <article>
                 <div class="content">
                     <h2>Testimonials</h2>
@@ -99,6 +114,9 @@
             </article>
             <br><hr>
         </main>
+        <!--
+            Footer area imported from _footer.html
+        -->
         <footer>
             <%- include('./partials/_footer.html'); %>
         </footer>

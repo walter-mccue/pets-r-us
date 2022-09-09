@@ -20,39 +20,193 @@
         <title><%- title %></title>
     </head>
     <body>
+        <!--
+            Header area imported from _header.html
+        -->
         <header>
             <%- include('./partials/_header.html') %>
         </header>
         <main>
             <hr>
+            <!--
+                Trainer Bio
+            -->
             <article>
                 <div class="content">
-                    <h2>Content</h2>
+                    <img src="/images/trainers.jpg" alt="Dog trainers, holding hands and walking their dogs.">
                 </div>
                 <div class="content">
-                    <h2>Content</h2>
+                    <h2>Meet the Trainers</h2>
+                    <p> Our dog trainers are two of the best trainers in the nation. Meet Jake and John. They've been training service and support animals for over a decade. They are dedicated to providing the best care for your pet, and believe in using positive reinforcement methods, like clicker training, to help you reach your goals. They are always looking for new opportunities to educate people about pet training as well as helping them solve common problems with their pets. They have worked with many different breeds of dogs over the years, including German Shepherds, Labrador Retrievers, Golden Retrievers and Boxers.</p>
                 </div>
             </article>
             <hr>
+            <!--
+                Puppy Training
+            -->
             <article>
                 <div class="content">
-                    <h2>Content</h2>
+                    <h2>Training a Puppy (Under 1 Year Old)</h2>
+                    <p>Training a puppy can be tough. They have a lot of energy and lose focus easily. That's where we come in. Our trainers have learned what captures a puppy's attention and how to keep that attention focused. We don't just teach simple commands, we teach how to communicate, both for you and for the puppy. Here is the pricing for training packages for puppies.</p>
+                    <table class="puppy">
+                        <tr>
+                            <th>Package</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            <td>Beginner</td>
+                            <td>$125</td>
+                        </tr>
+                        <tr>
+                            <td>Intermediate</td>
+                            <td>$125</td>
+                        </tr>
+                        <tr>
+                            <td>Advanced</td>
+                            <td>$125</td>
+                        </tr>
+                        <tr>
+                            <td>All Training Tiers</td>
+                            <td>$275</td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="content">
-                    <h2>Content</h2>
+                    <img src="images/training-puppy.jpg" alt="Puppy learning how to sit without taking the treat from the hand in front of his nose.">
                 </div>
             </article>
             <hr>
+            <!--
+                Adolescent Training
+            -->
             <article>
                 <div class="content">
-                    <h2>Content</h2>
+                    <h2>Training an Adolescent Dog (1 to 3 Years old)</h2>
+                    <p>Adolescent Dogs can be just as demanding as puppies. By the time they reach this stage of life, they've already developed their personality. While food is a good motivator, some dogs want attention, some want a particular toy. Once we figure that out, then we start working with them on learning new commands.</p>
+                    <table class="teen">
+                        <tr>
+                            <th>Package</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            <td>Beginner</td>
+                            <td>$150</td>
+                        </tr>
+                        <tr>
+                            <td>Intermediate</td>
+                            <td>$150</td>
+                        </tr>
+                        <tr>
+                            <td>Advanced</td>
+                            <td>$150</td>
+                        </tr>
+                        <tr>
+                            <td>All Training Tiers</td>
+                            <td>$350</td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="content">
-                    <h2>Content</h2>
+                    <img src="images/training-adolescence.jpg" alt="Adolescent Dog learns to offer his paw to shake a human's hand.">
                 </div>
             </article>
             <hr>
+            <!--
+                Adult Dog Training
+            -->
+            <article>
+                <div class="content">
+                    <h2>Training an Adult Dog (4+ Years old)</h2>
+                    <p>Adult Dogs can be the toughest to train. Everyone has heard the saying, you can't teach an old dog new tricks. That saying has its merits but it isn't exactly true. It just takes longer for the dogs to learn. Adult dogs can be stubborn. But again, our trainers will develop a bond with the dog and find ways to motivate them.</p>
+                    <table class="adult">
+                        <tr>
+                            <th>Package</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            <td>Beginner</td>
+                            <td>$175</td>
+                        </tr>
+                        <tr>
+                            <td>Intermediate</td>
+                            <td>$175</td>
+                        </tr>
+                        <tr>
+                            <td>Advanced</td>
+                            <td>$175</td>
+                        </tr>
+                        <tr>
+                            <td>All Training Tiers</td>
+                            <td>$400</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="content">
+                    <img src="images/training-adult.jpg" alt="Adult Dog sits attentively awaiting a command from the trainer.">
+                </div>
+            </article>
+            <hr>
+            <!--
+                Training Schedule
+            -->
+            <h2>Training Schedule</h2>
+            <p>*Each training class meets for one hour, twice a week, for four weeks. We offer AM sessions or PM sessions. Owners are expected to bring vaccination records, training treats, dog blanket/pillow, and a favorite toy to each session.</p>
+            <table>
+                <tr>
+                    <th>Class</th>
+                    <th>Days</th>
+                    <th>Times</th>
+                </tr>
+                <tr class="puppy">
+                    <td>Puppy Beginner</td>
+                    <td>Wed/Sat</td>
+                    <td>9:00/14:00</td>
+                </tr>
+                <tr class="puppy">
+                    <td>Puppy Intermediate</td>
+                    <td>Wed/Sat</td>
+                    <td>10:00/15:00</td>
+                </tr>
+                <tr class="puppy">
+                    <td>Puppy Advanced</td>
+                    <td>Wed/Sat</td>
+                    <td>11:00/16:00</td>
+                </tr>
+                <tr class="teen">
+                    <td>Adolescent Beginner</td>
+                    <td>Tues/Fri</td>
+                    <td>9:00/14:00</td>
+                </tr>
+                <tr class="teen">
+                    <td>Adolescent Intermediate</td>
+                    <td>Tues/Fri</td>
+                    <td>10:00/15:00</td>
+                </tr>
+                <tr class="teen">
+                    <td>Adolescent Advanced</td>
+                    <td>Tues/Fri</td>
+                    <td>11:00/16:00</td>
+                </tr>
+                <tr class="adult">
+                    <td>Adult Beginner</td>
+                    <td>Mon/Thurs</td>
+                    <td>9:00/14:00</td>
+                </tr>
+                <tr class="adult">
+                    <td>Adult Intermediate</td>
+                    <td>Mon/Thurs</td>
+                    <td>10:00/15:00</td>
+                </tr>
+                <tr class="adult">
+                    <td>Adult Advanced</td>
+                    <td>Mon/Thurs</td>
+                    <td>11:00/16:00</td>
+                </tr>
+            </table>
         </main>
+        <!--
+            Footer area imported from _footer.html
+        -->
         <footer>
             <%- include('./partials/_footer.html'); %>
         </footer>
