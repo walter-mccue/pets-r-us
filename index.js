@@ -11,6 +11,9 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const ejs = require('ejs');
+const mongoose = require('mongoose');
+
+const Customer = require('./models/customers');
  
 // Renders HTML with EJS
 app.engine('html', require('ejs').__express);
@@ -22,9 +25,19 @@ app.set('views', './views');
  
 // Sets the public folder as the path for static files
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extend: true }));
+app.use(express.json());
 
 // App listens on this port
 const PORT = process.env.PORT || 3000;
+
+// Connects to MongoDB
+const conn = 'mongodb+srv://web340_admin:1Bulldog2@bellevueuniversity.dmjnhtd.mongodb.net/web340DB';
+mongoose.connect(conn).then(() => {
+    console.log('Connection to the database was successful');
+}).catch(err => {
+    console.log('MongoDB Error: ' + err.message);
+});
 
 // links the corresponding HTML files to the correct path and sets their title
 app.get('/', (req, res) => {
@@ -46,6 +59,43 @@ app.get('/training', (req, res) => {
     res.render('training', {
         title: 'Pets-R-Us Dog Training',
     })
+});
+
+app.get('/registration', (req, res) => {
+    res.render('registration', {
+        title: 'Pets-R-Us Register for an Account',
+    })
+});
+
+// Post user input from registration to MongoDB
+app.post('/', (req, res, next) => {
+	// console.log the sent data
+	console.log(req.body);
+	console.log(req.body.customerID);
+	console.log(req.body.email);
+
+	// Create a new customer object
+	const newCustomer = new Customer({
+		customerID: req.body.customerID,
+		email: req.body.email,
+	});
+
+	console.log(newCustomer);
+
+	// Save the new customer to the database
+	Customer.create(newCustomer, (err, customer) => {
+		// If there is an error, log it
+		if (err) {
+			console.log(err);
+			next(err);
+		// If there is no error, log the customer and redirect to the home page
+		} else {
+			console.log(`New Customer: ${customer} has been added to the database`);
+			res.render('index', {
+				title: 'Pets-R-Us Home',
+			});
+		}
+	});
 });
 
 // Tells the user that the application has started on the declared port

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!--
+            Title: registration.html
+            Author: Walter McCue
+            Date: 09/17/22
+            Description: Landing page for pets-r-us
+            References: WEB 340 GitHub; WEB 340 Assign_6; WEB 340 pets-r-us Instructions
+        -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--
+            Stylesheets, Google Font Kit, CDN Font Kit
+        -->
+        <link href="styles/site.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+        <title><%- title %></title>
+    </head>
+    <body>
+        <!--
+            Header area imported from _header.html
+        -->
+        <header>
+            <%- include('./partials/_header.html') %>
+        </header>
+        <main>
+            <hr>
+            <!--
+                Content
+            -->
+            <article>
+                <div class="content">
+                    <h2>Register for an Account!</h2>
+                    <p>Fill out the form to create an account. All you need is an email address and a unique Customer ID. Once you account registration is successful, you will be redirected to our home page.</p>
+                    <img src="images/register.jpg" alt="A Boxer registers for his own account on a laptop" />
+                </div>
+                <div class="content">
+                    <h2>Registration Form</h2>
+                    <form method="post" action="/">
+                        <input type="text" id="email" name="email" placeholder="Email" required>
+                        <input type="text" id="customerID" name="customerID" placeholder="Customer ID" required><br>
+                        <button type="submit" id="btnRegister">Register</button>
+                    </form>
+                </div>
+            </article>
+            <hr>
+        </main>
+        <!--
+            Footer area imported from _footer.html
+        -->
+        <footer>
+            <%- include('./partials/_footer.html'); %>
+        </footer>
+    </body>
+</html>
