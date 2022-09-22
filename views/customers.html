@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!--
+            Title: customers.html
+            Author: Walter McCue
+            Date: 09/04/22
+            Description: Customer Listing page for pets-r-us, displays a table with a list of all customers registered with the site.
+            References: WEB 340 GitHub; WEB 340 Assign_4; WEB 340 pets-r-us Instructions
+        -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--
+            Stylesheets, Google Font Kit, CDN Font Kit
+        -->
+        <link href="styles/site.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+        <title><%- title %></title>
+    </head>
+    <body>
+        <!--
+            Header area imported from _header.html
+        -->
+        <header>
+            <%- include('./partials/_header.html') %>
+        </header>
+        <main>
+            <hr>
+            <!--
+                Content
+            -->
+            <div id="customers">
+                <% if(customers.length > 0) { %>
+                    <table id="tblCustomers">
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Email</th>
+                        </tr>
+                        <tbody>
+                        <% customers.forEach(function(customer) { %>
+                        <tr>
+                            <td>
+                                <%= customer.customerID %>
+                            </td>
+                            <td>
+                                <%= customer.email %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                        </tbody>
+                    </table>
+                    <% } else { %>
+                    <h3>Customers have not been added to the MongoDB database.  Try adding some!</h3>
+                    <% } %>
+            </div>
+            <hr>
+        </main>
+        <!--
+            Footer area imported from _footer.html
+        -->
+        <footer>
+            <%- include('./partials/_footer.html'); %>
+        </footer>
+    </body>
+</html>

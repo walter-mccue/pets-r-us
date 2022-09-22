@@ -98,6 +98,21 @@ app.post('/', (req, res, next) => {
 	});
 });
 
+// Renders the customerID and email on the customer list page
+app.get('/customers', (req, res) => {
+	Customer.find({}, function(err, customers) {
+		if (err) {
+			console.log(err);
+			next(err);
+		} else {
+			res.render('customers', {
+				title: 'Pets-R-Us Customer List',
+				customers: customers,
+			})
+		}
+	})
+});
+
 // Tells the user that the application has started on the declared port
 app.listen(PORT, () => {
     console.log('Application started and listening on port ' + PORT);

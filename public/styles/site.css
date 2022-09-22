@@ -126,3 +126,13 @@ img {
 .adult {
   background-color: lightpink;
 }
+/**
+* Styling for Customers Page
+*/
+#customers {
+  height: auto;
+}
+#tblCustomers td, th {
+  padding-left: 40px;
+  text-align: left;
+}
