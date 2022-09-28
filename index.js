@@ -12,8 +12,10 @@ const path = require('path');
 const app = express();
 const ejs = require('ejs');
 const mongoose = require('mongoose');
+const fs = require('fs');
 
 const Customer = require('./models/customers');
+const Appointment = require('./models/appointments');
  
 // Renders HTML with EJS
 app.engine('html', require('ejs').__express);
@@ -112,6 +114,38 @@ app.get('/customers', (req, res) => {
 		}
 	})
 });
+
+
+app.get('/appointments', (req, res) => {
+	let jsonFile = fs.readFileSync('./public/data/services.json');
+	let services = JSON.parse(jsonFile);
+	console.log(services);
+	res.render('appointments', {
+		title: 'Pets-R-Us Appointment',
+		services: services,
+	})
+});
+
+
+app.post('/appointments', (req, res, next) => {
+	const newAppointment = new Appointment({
+		userName: req.body.userName,
+		fName: req.body.fName,
+		lName: req.body.lName,
+		email: req.body.email,
+		service: req.body.service,
+	})
+	Appointment.create(newAppointment, function(err, order) {
+		if (err) {
+			console.log(err);
+			next(err);
+		} else {
+			res.render('index', {
+				title: 'Pets-R-Us Home',
+			})
+		}
+	})
+})
 
 // Tells the user that the application has started on the declared port
 app.listen(PORT, () => {

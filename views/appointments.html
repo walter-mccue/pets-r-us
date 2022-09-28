@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!--
+            Title: appointments.html
+            Author: Walter McCue
+            Date: 09/30/22
+            Description: Appointments page for pets-r-us
+            References: WEB 340 GitHub; WEB 340 Assign_8; WEB 340 pets-r-us Instructions
+        -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--
+            Stylesheets, Google Font Kit, CDN Font Kit
+        -->
+        <link href="styles/site.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+        <title><%- title %></title>
+    </head>
+    <body>
+        <!--
+            Header area imported from _header.html
+        -->
+        <header>
+            <%- include('./partials/_header.html') %>
+        </header>
+        <main>
+            <hr>
+            <!--
+                Appointment Creation Form
+            -->
+            <article>
+                <div class="content">
+                    <h2>Book an Appointment!</h2>
+                    <p>Fill out the form to create an appointment. Your user name can be your name, or your pets name. All other fields must be accurate so we know which human is our contact for the appointment. Once the confirmation button is pressed, you will be redirected to our homepage.</p>
+                    <img src="images/appointments-grooming.jpg" alt="A cute dog is getting her curls done." />                </div>
+                <div class="content">
+                    <h2>Appointment Creation Form</h2>
+                    <form action="/appointments" method="post">
+                        <input type="text" id="userName" name="userName" placeholder="User Name" required><br>
+                        <input type="text" id="fName" name="fName" placeholder="First Name" required><br>
+                        <input type="text" id="lName" name="lName" placeholder="Last Name" required><br>
+                        <input type="email" id="email" name="email" placeholder="Email" required><br>
+                        <select name="service" id="service" required>
+                            <% services.forEach((service) => { %>
+                            <option value="'<%= service.value %>'"><%= service.text %></option>
+                            <% }) %>
+                        </select><br>
+                        <button type="submit" id="btnAppointment">Create Appointment</button>
+                    </form>
+                </div>
+            </article>
+            <hr>
+        </main>
+        <!--
+            Footer area imported from _footer.html
+        -->
+        <footer>
+            <%- include('./partials/_footer.html'); %>
+        </footer>
+    </body>
+</html>
