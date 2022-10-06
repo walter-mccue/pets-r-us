@@ -35,10 +35,8 @@
                 <div class="content">
                     <h2>Look up your Appointment Booking</h2>
                     <p>Enter your email address and click the button to view your confirmed appointments.</p>
-                    <form>
-                        <input type="email" id="email" name="email" placeholder="Email" required />
+                        <input type="text" id="email" name="email" placeholder="Email" required />
                         <input type="submit" id="search" value="Search Appointments" />
-                    </form>
                 </div>
                 <div class="content">
                     <div id="results"></div>
@@ -57,11 +55,12 @@
         -->
         <script>
             document.getElementById('search').onclick = function() {
+                console.log('button works');
                 const email = document.getElementById('email').value;
-                fetch('/api/appointments/' + email)
+                fetch('/api/booking/' + email)
                     .then(res => res.json())
                     .then(data => {
-                        let tableString = `<h3>Your booked Appointments</h3>
+                        let tableString = `<h3>Your Booked Appointments</h3>
                             <table>
                                 <tr>
                                     <th>First Name</th>

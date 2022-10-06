@@ -45,7 +45,7 @@
                         <input type="email" id="email" name="email" placeholder="Email" required><br>
                         <select name="service" id="service" required>
                             <% services.forEach((service) => { %>
-                            <option value="'<%= service.value %>'"><%= service.text %></option>
+                            <option value="<%= service.value %>"><%= service.text %></option>
                             <% }) %>
                         </select><br>
                         <button type="submit" id="btnAppointment">Create Appointment</button>

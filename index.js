@@ -155,7 +155,7 @@ app.get('/booking', (req, res) => {
 });
 
 // Creates the API to display requested appointment information
-app.get('/api/appointments/:email', async(req, res, next) => {
+app.get('/api/booking/:email', async(req, res, next) => {
     Appointment.find({'email': req.params.email}, function(err, appointments) {
         if (err) {
             console.log(err);
