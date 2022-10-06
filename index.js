@@ -34,7 +34,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
 // Connects to MongoDB
-const conn = 'mongodb+srv://web340_admin:1Bulldog2@bellevueuniversity.dmjnhtd.mongodb.net/web340DB';
+const conn = 'mongodb+srv://web340_admin:AdminPassword@bellevueuniversity.dmjnhtd.mongodb.net/web340DB';
 mongoose.connect(conn).then(() => {
     console.log('Connection to the database was successful');
 }).catch(err => {
@@ -115,7 +115,7 @@ app.get('/customers', (req, res) => {
 	})
 });
 
-
+// Renders the Appointments Page
 app.get('/appointments', (req, res) => {
 	let jsonFile = fs.readFileSync('./public/data/services.json');
 	let services = JSON.parse(jsonFile);
@@ -126,7 +126,7 @@ app.get('/appointments', (req, res) => {
 	})
 });
 
-
+// Posts the user input to the database and renders the Index Page
 app.post('/appointments', (req, res, next) => {
 	const newAppointment = new Appointment({
 		userName: req.body.userName,
@@ -135,7 +135,7 @@ app.post('/appointments', (req, res, next) => {
 		email: req.body.email,
 		service: req.body.service,
 	})
-	Appointment.create(newAppointment, function(err, order) {
+	Appointment.create(newAppointment, function(err, appointments) {
 		if (err) {
 			console.log(err);
 			next(err);
@@ -145,7 +145,26 @@ app.post('/appointments', (req, res, next) => {
 			})
 		}
 	})
-})
+});
+
+// Renders the Booking Page
+app.get('/booking', (req, res) => {
+	res.render('booking', {
+		title: 'Pets-R-Us My Booked Appointments',
+	})
+});
+
+// Creates the API to display requested appointment information
+app.get('/api/appointments/:email', async(req, res, next) => {
+    Appointment.find({'email': req.params.email}, function(err, appointments) {
+        if (err) {
+            console.log(err);
+            next(err);
+        } else {
+            res.json(appointments);
+        }
+    })
+});
 
 // Tells the user that the application has started on the declared port
 app.listen(PORT, () => {
